@@ -208,9 +208,15 @@ class Button extends PureComponent {
     const styles = getStyles(this.props, this.state);
 
     const content = (
-      <View style={styles.container} pointerEvents="box-only">
+      <View
+        style={styles.container}
+        pointerEvents="box-only"
+        accessibilityLabel={accessibilityLabel}
+        testID={testID}
+        disabled="false"
+      >
         {this.renderIcon(styles)}
-        <Text style={styles.text}>{upperCase ? text.toUpperCase() : text}</Text>
+        <Text style={styles.text} disabled="false">{upperCase ? text.toUpperCase() : text}</Text>
       </View>
     );
 
